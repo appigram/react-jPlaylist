@@ -8,13 +8,11 @@ proxyquire.noCallThru();
 
 let onKeyDown;
 const id = 'TestPlayer';
-const mockKeyControl = ({ keyBindings }) =>
-  <button onKeyDown={() => onKeyDown(keyBindings)} />;
+const mockKeyControl = ({ keyBindings }) => <button onKeyDown={() => onKeyDown(keyBindings)} />;
 const keyControlContainer = proxyquire('./keyControlContainer', {
   './keyControl': mockKeyControl,
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(keyControlContainer, jPlaylists, jPlayers, props);
+const setup = (jPlaylists, jPlayers, props) => containerSetup(keyControlContainer, jPlaylists, jPlayers, props);
 
 describe('keyControlContainer', () => {
   let jPlaylists;

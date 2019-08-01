@@ -22,19 +22,19 @@
   min-width: 42px;
 }
 .jp-jplayer .jp-icon-controls .jp-play i:before {
-  content: "\F04B";
+  content: "\f04b";
 }
 .jp-jplayer.jp-state-playing .jp-icon-controls .jp-play i:before {
-  content: "\F04C";
+  content: "\f04c";
 }
 .jp-jplayer.jp-state-muted .jp-icon-controls .jp-mute i:before {
-  content: "\F026";
+  content: "\f026";
 }
 .jp-jplayer.jp-state-volume-low .jp-icon-controls .jp-mute i:before {
-  content: "\F027";
+  content: "\f027";
 }
 .jp-jplayer.jp-state-volume-high .jp-icon-controls .jp-mute i:before {
-  content: "\F028";
+  content: "\f028";
 }
 .jp-state-shuffled.jp-jplayer .jp-icon-controls .jp-shuffle {
   color: #2175ff;

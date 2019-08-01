@@ -2,7 +2,9 @@ import { connectWithId } from 'react-jplayer-utils';
 import merge from 'lodash.merge';
 
 import KeyControl from './keyControl';
-import { setOption, next, previous, shuffle } from '../../../actions/actions';
+import {
+  setOption, next, previous, shuffle,
+} from '../../../actions/actions';
 import getLoopState from '../../../util/loop/getLoopState';
 
 const mapStateToProps = ({ jPlaylists }, { id }) => ({

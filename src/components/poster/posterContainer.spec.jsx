@@ -9,8 +9,7 @@ import containerSetup from '../../util/specHelpers/containerSetup.spec';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockPoster = () =>
-  <img />;
+const mockPoster = () => <img />;
 const posterContainer = proxyquire('./posterContainer', {
   'react-jplayer': { PosterComponent: mockPoster },
 }).default;

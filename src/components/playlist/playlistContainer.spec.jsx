@@ -9,13 +9,11 @@ import { classes } from '../../util/constants';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockPlaylist = () =>
-  <div />;
+const mockPlaylist = () => <div />;
 const PlaylistContainer = proxyquire('./playlistContainer', {
   './playlist': mockPlaylist,
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(PlaylistContainer, jPlaylists, jPlayers, props);
+const setup = (jPlaylists, jPlayers, props) => containerSetup(PlaylistContainer, jPlaylists, jPlayers, props);
 
 describe('PlaylistContainer', () => {
   let jPlayers;

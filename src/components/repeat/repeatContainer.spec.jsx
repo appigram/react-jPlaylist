@@ -5,13 +5,11 @@ import proxyquire from 'proxyquire';
 import containerSetup from '../../util/specHelpers/containerSetup.spec';
 
 const id = 'TestPlayer';
-const mockRepeat = ({ loop }) =>
-  <button onClick={loop} />;
+const mockRepeat = ({ loop }) => <button onClick={loop} />;
 const RepeatContainer = proxyquire('./repeatContainer', {
   'react-jplayer': { RepeatComponent: mockRepeat },
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(RepeatContainer, jPlaylists, jPlayers, props);
+const setup = (jPlaylists, jPlayers, props) => containerSetup(RepeatContainer, jPlaylists, jPlayers, props);
 
 describe('RepeatContainer', () => {
   let jPlayers;

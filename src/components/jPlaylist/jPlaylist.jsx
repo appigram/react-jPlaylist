@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 
 import KeyControl from './keyControl/keyControlContainer';
 
-const JPlaylist = ({ states, keyBindings, children, id }) => (
+const JPlaylist = ({
+  states, keyBindings, children, id,
+}) => (
   <KeyControl keyBindings={keyBindings}>
     {React.cloneElement(React.Children.only(children), {
       states,

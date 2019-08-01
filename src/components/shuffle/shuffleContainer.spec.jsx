@@ -7,13 +7,11 @@ import containerSetup from '../../util/specHelpers/containerSetup.spec';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockShuffle = ({ shuffle }) =>
-  <button onClick={shuffle} />;
+const mockShuffle = ({ shuffle }) => <button onClick={shuffle} />;
 const ShuffleContainer = proxyquire('./shuffleContainer', {
   './shuffle': mockShuffle,
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(ShuffleContainer, jPlaylists, jPlayers, props);
+const setup = (jPlaylists, jPlayers, props) => containerSetup(ShuffleContainer, jPlaylists, jPlayers, props);
 
 describe('ShuffleContainer', () => {
   let jPlayers;

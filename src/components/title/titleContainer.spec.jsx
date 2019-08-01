@@ -7,8 +7,7 @@ import containerSetup from '../../util/specHelpers/containerSetup.spec';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockTitle = () =>
-  <div />;
+const mockTitle = () => <div />;
 const titleContainer = proxyquire('./titleContainer', {
   'react-jplayer': { TitleComponent: mockTitle },
 }).default;

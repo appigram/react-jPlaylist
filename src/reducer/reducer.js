@@ -19,14 +19,14 @@ const add = (jPlaylist, { media, playNow }) => {
   const highestMediaShufflePosition = maxBy(jPlaylist.playlist, 'shufflePosition');
   const newMedia = {
     ...media,
-    shufflePosition: highestMediaShufflePosition !== undefined ?
-      highestMediaShufflePosition.shufflePosition + 1 : 0,
+    shufflePosition: highestMediaShufflePosition !== undefined
+      ? highestMediaShufflePosition.shufflePosition + 1 : 0,
   };
   const playlist = [
     ...jPlaylist.playlist,
     newMedia,
   ];
-  let current = jPlaylist.current;
+  let { current } = jPlaylist;
 
   if (playNow) {
     current = playlist.length - 1;
@@ -43,8 +43,8 @@ const add = (jPlaylist, { media, playNow }) => {
 
 const remove = (jPlaylist, { index }) => {
   const playlist = [...jPlaylist.playlist];
-  let current = jPlaylist.current;
-  let shuffled = jPlaylist.shuffled;
+  let { current } = jPlaylist;
+  let { shuffled } = jPlaylist;
 
   playlist.splice(index, 1);
 

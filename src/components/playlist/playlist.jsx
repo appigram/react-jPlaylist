@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose, branch, renderComponent, renderNothing } from 'recompose';
+import {
+  compose, branch, renderComponent, renderNothing,
+} from 'recompose';
 
 import PlaylistItem from '../playlistItem/playlistItemContainer';
 
@@ -9,7 +11,8 @@ const Playlist = ({ playlist, children, className }) => (
     {playlist.map((media, index) => (
       <PlaylistItem key={media.id} index={index}>
         {children}
-      </PlaylistItem>))
+      </PlaylistItem>
+    ))
     }
   </ul>
 );

@@ -7,13 +7,11 @@ import containerSetup from '../../util/specHelpers/containerSetup.spec';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockNext = ({ next }) =>
-  <button onClick={next} />;
+const mockNext = ({ next }) => <button onClick={next} />;
 const NextContainer = proxyquire('./nextContainer', {
   './next': mockNext,
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(NextContainer, jPlaylists, jPlayers, props);
+const setup = (jPlaylists, jPlayers, props) => containerSetup(NextContainer, jPlaylists, jPlayers, props);
 
 describe('NextContainer', () => {
   let jPlayers;

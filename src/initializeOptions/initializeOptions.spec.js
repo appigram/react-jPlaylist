@@ -11,7 +11,7 @@ const proxy = proxyquire('./initializeOptions', {
   'react-jplayer': { initializeOptions: jPlayerInitializeOptions },
 });
 const initializeOptions = proxy.default;
-const initialState = proxy.initialState;
+const { initialState } = proxy;
 
 describe('initializeOptions', () => {
   let jPlayerOptions;
@@ -53,7 +53,8 @@ describe('initializeOptions', () => {
 
       initializeOptions(jPlayerOptions, jPlaylistOptions);
 
-      jPlayerOptions.media = jPlaylistOptions.playlist[0];
+      const [firstElement] = jPlaylistOptions.playlist;
+      jPlayerOptions.media = firstElement;
 
       expect(jPlayerInitializeOptions).toHaveBeenCalledWith(jPlayerOptions);
     });

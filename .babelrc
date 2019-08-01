@@ -1,8 +1,8 @@
 {
   "presets": [
-    "env",
-    "stage-2",
-    "react"
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "minify"
   ],
   "env": {
     "test": {

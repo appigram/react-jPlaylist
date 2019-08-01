@@ -9,16 +9,14 @@ import { setOption, setPlaylist } from '../../actions/actions';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockJPlaylist = () =>
-  <div />;
+const mockJPlaylist = () => <div />;
 const JPlaylistContainer = proxyquire('./jPlaylistContainer', {
   './jPlaylist': mockJPlaylist,
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(JPlaylistContainer, jPlaylists, jPlayers, {
-    id,
-    ...props,
-  });
+const setup = (jPlaylists, jPlayers, props) => containerSetup(JPlaylistContainer, jPlaylists, jPlayers, {
+  id,
+  ...props,
+});
 
 const media = document.createElement('audio');
 

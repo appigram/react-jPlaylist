@@ -7,13 +7,11 @@ import containerSetup from '../../util/specHelpers/containerSetup.spec';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockMediaLink = ({ play }) =>
-  <button onClick={play} />;
+const mockMediaLink = ({ play }) => <button onClick={play} />;
 const MediaLinkContainer = proxyquire('./mediaLinkContainer', {
   './mediaLink': mockMediaLink,
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(MediaLinkContainer, jPlaylists, jPlayers, props);
+const setup = (jPlaylists, jPlayers, props) => containerSetup(MediaLinkContainer, jPlaylists, jPlayers, props);
 
 describe('MediaLinkContainer', () => {
   let jPlayers;

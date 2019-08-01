@@ -7,13 +7,11 @@ import containerSetup from '../../util/specHelpers/containerSetup.spec';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockRemove = ({ remove }) =>
-  <button onClick={remove} />;
+const mockRemove = ({ remove }) => <button onClick={remove} />;
 const RemoveContainer = proxyquire('./removeContainer', {
   './remove': mockRemove,
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(RemoveContainer, jPlaylists, jPlayers, props);
+const setup = (jPlaylists, jPlayers, props) => containerSetup(RemoveContainer, jPlaylists, jPlayers, props);
 
 describe('RemoveContainer', () => {
   let jPlayers;

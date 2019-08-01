@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
 import { actions as jPlayerActions } from 'react-jplayer';
 import { connect } from 'react-redux';
-import { compose, lifecycle as setLifecycle, withHandlers, withContext, withProps } from 'recompose';
+import {
+  compose, lifecycle as setLifecycle, withHandlers, withContext, withProps,
+} from 'recompose';
 
 import JPlaylist from './jPlaylist';
 import { classes } from '../../util/constants';
-import { setOption, setPlaylist, next, shuffle } from '../../actions/actions';
+import {
+  setOption, setPlaylist, next, shuffle,
+} from '../../actions/actions';
 
 const mapStateToProps = ({ jPlayers, jPlaylists }, { id }) => ({
   playNow: jPlaylists[id].playNow,
@@ -48,8 +52,8 @@ const handlers = {
     }
   },
   shufflePlaylistOnLoopPlaylist: props => () => {
-    if (props.loop === 'loop-playlist' && props.current === 0 &&
-      props.shuffled && props.shuffleOnLoop) {
+    if (props.loop === 'loop-playlist' && props.current === 0
+      && props.shuffled && props.shuffleOnLoop) {
       props.dispatch(shuffle(props.id, true, true));
     }
   },
@@ -97,8 +101,8 @@ const lifecycle = {
       this.props.playMediaNow();
     }
 
-    if (this.props.currentMediaId !== prevProps.currentMediaId &&
-      prevProps.current === prevProps.playlist.length - 1) {
+    if (this.props.currentMediaId !== prevProps.currentMediaId
+      && prevProps.current === prevProps.playlist.length - 1) {
       this.props.shufflePlaylistOnLoopPlaylist();
     }
   },

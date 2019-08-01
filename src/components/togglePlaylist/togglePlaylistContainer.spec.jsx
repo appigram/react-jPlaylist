@@ -7,13 +7,11 @@ import containerSetup from '../../util/specHelpers/containerSetup.spec';
 proxyquire.noCallThru();
 
 const id = 'TestPlayer';
-const mockTogglePlaylist = ({ togglePlaylist }) =>
-  <button onClick={togglePlaylist} />;
+const mockTogglePlaylist = ({ togglePlaylist }) => <button onClick={togglePlaylist} />;
 const TogglePlaylistContainer = proxyquire('./togglePlaylistContainer', {
   './togglePlaylist': mockTogglePlaylist,
 }).default;
-const setup = (jPlaylists, jPlayers, props) =>
-  containerSetup(TogglePlaylistContainer, jPlaylists, jPlayers, props);
+const setup = (jPlaylists, jPlayers, props) => containerSetup(TogglePlaylistContainer, jPlaylists, jPlayers, props);
 
 describe('TogglePlaylistContainer', () => {
   let jPlayers;
