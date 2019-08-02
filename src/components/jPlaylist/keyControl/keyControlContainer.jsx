@@ -1,4 +1,4 @@
-import { connectWithId } from 'react-jplayer-utils';
+import { connectWithId } from '@appigram/react-jplayer-utils';
 import merge from 'lodash.merge';
 
 import KeyControl from './keyControl';

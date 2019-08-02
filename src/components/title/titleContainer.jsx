@@ -1,5 +1,5 @@
 import { TitleComponent } from 'react-jplayer';
-import { connectWithIndex, formatArtistAndTitle } from 'react-jplayer-utils';
+import { connectWithIndex, formatArtistAndTitle } from '@appigram/react-jplayer-utils';
 
 const mapStateToProps = ({ jPlaylists }, { id, index }) => ({
   title: formatArtistAndTitle(

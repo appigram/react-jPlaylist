@@ -1,5 +1,5 @@
 import { RepeatComponent } from 'react-jplayer';
-import { connectWithId } from 'react-jplayer-utils';
+import { connectWithId } from '@appigram/react-jplayer-utils';
 import { compose, withHandlers } from 'recompose';
 
 import { setOption } from '../../actions/actions';

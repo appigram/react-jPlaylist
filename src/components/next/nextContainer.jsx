@@ -1,4 +1,4 @@
-import { connectWithId } from 'react-jplayer-utils';
+import { connectWithId } from '@appigram/react-jplayer-utils';
 import { compose, withHandlers } from 'recompose';
 
 import { next } from '../../actions/actions';

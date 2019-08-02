@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { connectWithId } from 'react-jplayer-utils';
+import { connectWithId } from '@appigram/react-jplayer-utils';
 import { compose, withContext } from 'recompose';
 import classNames from 'classnames';
 

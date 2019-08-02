@@ -1,4 +1,4 @@
-import { connectWithIndex } from 'react-jplayer-utils';
+import { connectWithIndex } from '@appigram/react-jplayer-utils';
 import { compose, withHandlers } from 'recompose';
 
 import { remove } from '../../actions/actions';

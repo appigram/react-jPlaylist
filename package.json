@@ -1,14 +1,14 @@
 {
-  "name": "react-jplaylist",
-  "version": "3.1.6",
+  "name": "@appigram/react-jplaylist",
+  "version": "3.1.9",
   "description": "Html5 audio and video playlist library for React that implements react-jPlayer",
-  "author": "Martin Dawson <u1356770@gmail.com>",
+  "author": "Eugene Sysmanov <appigram@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jplayer/react-jPlaylist.git"
+    "url": "https://github.com/appigram/react-jPlaylist.git"
   },
   "bugs": {
-    "url": "https://github.com/jplayer/react-jPlaylist/issues"
+    "url": "https://github.com/appigram/react-jPlaylist/issues"
   },
   "keywords": [
     "audio",
@@ -27,7 +27,7 @@
     "react-jplayer",
     "react-jplaylist"
   ],
-  "homepage": "https://github.com/jplayer/react-jPlaylist",
+  "homepage": "https://github.com/appigram/react-jPlaylist",
   "license": "MIT",
   "main": "./lib/index.js",
   "files": [
@@ -128,22 +128,22 @@
     "redux": "^4.0.4",
     "rimraf": "^2.6.3",
     "style-loader": "^0.23.1",
-    "webpack": "^4.38.0",
+    "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@appigram/react-jplayer": "^7.2.2",
+    "@appigram/react-jplayer-utils": "^3.2.1",
     "classnames": "^2.2.6",
     "lodash.maxby": "^4.6.0",
     "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
-    "react-jplayer": "github:appigram/react-jplayer",
-    "react-jplayer-utils": "github:appigram/react-jplayer-utils",
     "react": "^16.8.6",
     "react-redux": "^5.0.2",
     "recompose": "^0.30.0"
   },
   "peerDependencies": {
-    "react-jplayer": "github:appigram/react-jplayer"
+    "@appigram/react-jplayer": "^7.2.2"
   }
 }

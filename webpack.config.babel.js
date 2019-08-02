@@ -1,8 +1,8 @@
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import BabiliPlugin from 'babili-webpack-plugin';
-import autoprefixer from 'autoprefixer';
-import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import BabiliPlugin from 'babili-webpack-plugin'
+import autoprefixer from 'autoprefixer'
+import path from 'path'
 
 export default {
   context: __dirname,
@@ -15,7 +15,7 @@ export default {
     'react-redux': 'ReactRedux',
     recompose: 'Recompose',
     'prop-types': 'PropTypes',
-    'react-jplayer': 'ReactJPlayer',
+    'react-jplayer': 'ReactJPlayer'
   },
   entry: {
     'js/react-jPlaylist.js': './src/index.js',
@@ -23,20 +23,20 @@ export default {
     'css/controls/iconControls.css': './src/less/controls/iconControls.less',
     'css/controls/iconControls.min.css': './src/less/controls/iconControls.less',
     'css/skins/sleek.css': './src/less/skins/sleek.less',
-    'css/skins/sleek.min.css': './src/less/skins/sleek.less',
+    'css/skins/sleek.min.css': './src/less/skins/sleek.less'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]',
     libraryTarget: 'var',
-    library: 'ReactJPlaylist',
+    library: 'ReactJPlaylist'
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         include: /src/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.less$/,
@@ -44,33 +44,33 @@ export default {
           fallback: 'style-loader',
           use: [{
             loader: 'css-loader',
-            options: { importLoaders: 1 },
+            options: { importLoaders: 1 }
           }, {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [autoprefixer],
-            },
+              plugins: () => [autoprefixer]
+            }
           }, {
-            loader: 'less-loader',
-          }],
-        }),
+            loader: 'less-loader'
+          }]
+        })
       },
       {
         test: /\.jpg$/,
-        loader: 'file-loader',
-      },
-    ],
+        loader: 'file-loader'
+      }
+    ]
   },
   plugins: [
     new ExtractTextPlugin('[name]'),
     new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.min\.css$/,
+      assetNameRegExp: /\.min\.css$/
     }),
     new BabiliPlugin({}, {
-      test: /\.min\.js$/,
-    }),
+      test: /\.min\.js$/
+    })
   ],
   resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-};
+    extensions: ['.js', '.jsx']
+  }
+}

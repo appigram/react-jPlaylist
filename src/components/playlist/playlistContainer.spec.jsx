@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import proxyquire from 'proxyquire';
-import { classes as sharedClasses } from 'react-jplayer-utils';
+import { classes as sharedClasses } from '@appigram/react-jplayer-utils';
 
 import containerSetup from '../../util/specHelpers/containerSetup.spec';
 import { classes } from '../../util/constants';

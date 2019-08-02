@@ -1,4 +1,4 @@
-import { connectWithId, classes as sharedClasses } from 'react-jplayer-utils';
+import { connectWithId, classes as sharedClasses } from '@appigram/react-jplayer-utils';
 import classNames from 'classnames';
 
 import { classes } from '../../util/constants';
