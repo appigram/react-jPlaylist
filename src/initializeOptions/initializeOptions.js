@@ -1,24 +1,24 @@
-import merge from 'lodash.merge';
-import { initializeOptions } from 'react-jplayer';
+import merge from 'lodash.merge'
+import { initializeOptions } from '@appigram/react-jplayer'
 
-import { defaultStatus, defaultOptions } from '../util/constants';
+import { defaultStatus, defaultOptions } from '../util/constants'
 
-export const initialState = {};
+export const initialState = {}
 
 const options = (jPlayerOptions, jPlaylistOptions) => {
   initialState[jPlayerOptions.id] = merge({}, defaultStatus,
-    defaultOptions, jPlaylistOptions);
+    defaultOptions, jPlaylistOptions)
 
   if (Array.isArray(jPlaylistOptions.playlist)) {
-    const media = jPlaylistOptions.playlist[0];
+    const media = jPlaylistOptions.playlist[0]
 
     return initializeOptions({
       ...jPlayerOptions,
-      media,
-    });
+      media
+    })
   }
 
-  return initializeOptions(jPlayerOptions);
-};
+  return initializeOptions(jPlayerOptions)
+}
 
-export default options;
+export default options
