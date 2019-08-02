@@ -9,7 +9,7 @@ proxyquire.noCallThru();
 const id = 'TestPlayer';
 const mockTitle = () => <div />;
 const titleContainer = proxyquire('./titleContainer', {
-  'react-jplayer': { TitleComponent: mockTitle },
+  '@appigram/react-jplayer': { TitleComponent: mockTitle },
 }).default;
 const setup = (jPlayers, props) => containerSetup(titleContainer, jPlayers, props);
 

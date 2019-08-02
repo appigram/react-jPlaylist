@@ -7,7 +7,7 @@ import containerSetup from '../../util/specHelpers/containerSetup.spec';
 const id = 'TestPlayer';
 const mockRepeat = ({ loop }) => <button onClick={loop} />;
 const RepeatContainer = proxyquire('./repeatContainer', {
-  'react-jplayer': { RepeatComponent: mockRepeat },
+  '@appigram/react-jplayer': { RepeatComponent: mockRepeat },
 }).default;
 const setup = (jPlaylists, jPlayers, props) => containerSetup(RepeatContainer, jPlaylists, jPlayers, props);
 

@@ -11,7 +11,7 @@ proxyquire.noCallThru();
 const id = 'TestPlayer';
 const mockPoster = () => <img />;
 const posterContainer = proxyquire('./posterContainer', {
-  'react-jplayer': { PosterComponent: mockPoster },
+  '@appigram/react-jplayer': { PosterComponent: mockPoster },
 }).default;
 const setup = (jPlayers, props) => containerSetup(posterContainer, jPlayers, props);
 

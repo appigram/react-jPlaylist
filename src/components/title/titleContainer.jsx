@@ -1,4 +1,4 @@
-import { TitleComponent } from 'react-jplayer';
+import { TitleComponent } from '@appigram/react-jplayer';
 import { connectWithIndex, formatArtistAndTitle } from '@appigram/react-jplayer-utils';
 
 const mapStateToProps = ({ jPlaylists }, { id, index }) => ({

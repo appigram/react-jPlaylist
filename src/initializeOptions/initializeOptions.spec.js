@@ -8,7 +8,7 @@ proxyquire.noCallThru();
 
 const jPlayerInitializeOptions = expect.createSpy();
 const proxy = proxyquire('./initializeOptions', {
-  'react-jplayer': { initializeOptions: jPlayerInitializeOptions },
+  '@appigram/react-jplayer': { initializeOptions: jPlayerInitializeOptions },
 });
 const initializeOptions = proxy.default;
 const { initialState } = proxy;

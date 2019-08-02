@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme';
 import { createStore, combineReducers } from 'redux';
-import { reducer as jPlayerReducer } from 'react-jplayer';
+import { reducer as jPlayerReducer } from '@appigram/react-jplayer';
 
 import jPlaylistReducer from '../../reducer/reducer';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import proxyquire from 'proxyquire';
-import { constants } from 'react-jplayer';
+import { constants } from '@appigram/react-jplayer';
 
 import containerSetup from '../../util/specHelpers/containerSetup.spec';
 import { setOption, setPlaylist } from '../../actions/actions';

@@ -1,4 +1,4 @@
-import { PosterComponent } from 'react-jplayer';
+import { PosterComponent } from '@appigram/react-jplayer';
 import { connectWithIndex } from '@appigram/react-jplayer-utils';
 
 const mapStateToProps = ({ jPlaylists }, { id, index }) => ({
