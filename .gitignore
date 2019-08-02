@@ -9,6 +9,5 @@ node_modules
 .vscode
 coverage
 .nyc_output
-lib
 artifacts
 yarn-error.log
