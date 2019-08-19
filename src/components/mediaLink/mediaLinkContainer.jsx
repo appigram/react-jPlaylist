@@ -5,7 +5,7 @@ import { play } from '../../actions/actions';
 import MediaLink from './mediaLink';
 
 const handlers = {
-  play: props => () => {
+  play: (props) => () => {
     props.play(props.id, props.index);
   },
 };

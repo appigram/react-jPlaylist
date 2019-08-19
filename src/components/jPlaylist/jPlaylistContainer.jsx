@@ -1,15 +1,15 @@
-import PropTypes from 'prop-types'
-import { actions as jPlayerActions } from '@appigram/react-jplayer'
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { actions as jPlayerActions } from '@appigram/react-jplayer';
+import { connect } from 'react-redux';
 import {
-  compose, lifecycle as setLifecycle, withHandlers, withContext, withProps
-} from 'recompose'
+  compose, lifecycle as setLifecycle, withHandlers, withContext, withProps,
+} from 'recompose';
 
-import JPlaylist from './jPlaylist'
-import { classes } from '../../util/constants'
+import JPlaylist from './jPlaylist';
+import { classes } from '../../util/constants';
 import {
-  setOption, setPlaylist, next, shuffle
-} from '../../actions/actions'
+  setOption, setPlaylist, next, shuffle,
+} from '../../actions/actions';
 
 const mapStateToProps = ({ jPlayers, jPlaylists }, { id }) => ({
   playNow: jPlaylists[id].playNow,
@@ -22,91 +22,91 @@ const mapStateToProps = ({ jPlayers, jPlaylists }, { id }) => ({
   id,
   states: {
     [classes.states.LOOPED_PLAYLIST]: jPlaylists[id].loop === 'loop-playlist',
-    [classes.states.SHUFFLED]: jPlaylists[id].shuffled
-  }
-})
+    [classes.states.SHUFFLED]: jPlaylists[id].shuffled,
+  },
+});
 
 const createProps = ({ playlist, current }) => ({
-  currentMediaId: playlist.length > 0 ? playlist[current].id : null
-})
+  currentMediaId: playlist.length > 0 ? playlist[current].id : null,
+});
 
 const handlers = {
-  setLoop: props => () => {
+  setLoop: (props) => () => {
     if (props.loop === 'loop') {
-      props.dispatch(jPlayerActions.setOption(props.id, 'loop', true))
+      props.dispatch(jPlayerActions.setOption(props.id, 'loop', true));
     } else {
-      props.dispatch(jPlayerActions.setOption(props.id, 'loop', false))
+      props.dispatch(jPlayerActions.setOption(props.id, 'loop', false));
     }
   },
-  playNext: props => () => props.dispatch(next(props.id)),
-  playMediaNow: props => () => {
-    props.dispatch(jPlayerActions.play(props.id))
-    props.dispatch(setOption(props.id, 'playNow', false))
+  playNext: (props) => () => props.dispatch(next(props.id)),
+  playMediaNow: (props) => () => {
+    props.dispatch(jPlayerActions.play(props.id));
+    props.dispatch(setOption(props.id, 'playNow', false));
   },
-  changeMedia: props => () => {
+  changeMedia: (props) => () => {
     if (props.playlist.length > 0) {
       props.dispatch(jPlayerActions.setMedia(
         props.id,
         props.playlist[props.current],
-      ))
+      ));
     }
   },
-  shufflePlaylistOnLoopPlaylist: props => () => {
+  shufflePlaylistOnLoopPlaylist: (props) => () => {
     if (props.loop === 'loop-playlist' && props.current === 0
       && props.shuffled && props.shuffleOnLoop) {
-      props.dispatch(shuffle(props.id, true, true))
+      props.dispatch(shuffle(props.id, true, true));
     }
   },
-  clearMediaWhenPlaylistEmpty: props => () => {
+  clearMediaWhenPlaylistEmpty: (props) => () => {
     if (props.playlist.length === 0) {
-      props.dispatch(jPlayerActions.clearMedia(props.id))
+      props.dispatch(jPlayerActions.clearMedia(props.id));
     }
-  }
-}
+  },
+};
 
 const contextTypes = {
   id: PropTypes.string,
   internalEvents: PropTypes.shape({
-    onEnded: PropTypes.func
-  })
-}
+    onEnded: PropTypes.func,
+  }),
+};
 
 const childContext = ({ id, playNext }) => ({
   id,
   internalEvents: {
-    onEnded: playNext
-  }
-})
+    onEnded: playNext,
+  },
+});
 
 const lifecycle = {
-  componentDidMount () {
+  componentDidMount() {
     if (this.props.playlist.length > 0) {
-      this.props.dispatch(setPlaylist(this.props.id, this.props.playlist))
+      this.props.dispatch(setPlaylist(this.props.id, this.props.playlist));
     }
   },
-  componentDidUpdate (prevProps) {
+  componentDidUpdate(prevProps) {
     if (this.props.currentMediaId !== prevProps.currentMediaId) {
-      this.props.changeMedia()
+      this.props.changeMedia();
     }
 
     if (this.props.playlist.length !== prevProps.playlist.length) {
-      this.props.clearMediaWhenPlaylistEmpty()
+      this.props.clearMediaWhenPlaylistEmpty();
     }
 
     if (this.props.loop !== prevProps.loop) {
-      this.props.setLoop()
+      this.props.setLoop();
     }
 
     if (this.props.playNow) {
-      this.props.playMediaNow()
+      this.props.playMediaNow();
     }
 
     if (this.props.currentMediaId !== prevProps.currentMediaId
       && prevProps.current === prevProps.playlist.length - 1) {
-      this.props.shufflePlaylistOnLoopPlaylist()
+      this.props.shufflePlaylistOnLoopPlaylist();
     }
-  }
-}
+  },
+};
 
 export default compose(
   connect(mapStateToProps),
@@ -114,4 +114,4 @@ export default compose(
   withHandlers(handlers),
   withContext(contextTypes, childContext),
   setLifecycle(lifecycle),
-)(JPlaylist)
+)(JPlaylist);

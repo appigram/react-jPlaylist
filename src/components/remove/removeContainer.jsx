@@ -5,7 +5,7 @@ import { remove } from '../../actions/actions';
 import Remove from './remove';
 
 const handlers = {
-  remove: props => () => props.remove(props.id, props.index),
+  remove: (props) => () => props.remove(props.id, props.index),
 };
 
 export default compose(

@@ -26,7 +26,7 @@ export const remove = (id, index) => ({
   index,
 });
 
-export const clear = id => ({
+export const clear = (id) => ({
   type: actionNames.CLEAR,
   id,
 });
@@ -51,12 +51,12 @@ export const shuffle = (id, shuffled, playNow) => ({
   shuffleSort: 0.5 - Math.random(),
 });
 
-export const next = id => ({
+export const next = (id) => ({
   type: actionNames.NEXT,
   id,
 });
 
-export const previous = id => ({
+export const previous = (id) => ({
   type: actionNames.PREVIOUS,
   id,
 });

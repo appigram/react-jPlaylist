@@ -19,11 +19,13 @@
     "react"
   ],
   "rules": {
-    "react/destructuring-assignment": 1,
-    "react/button-has-type": 1,
+    "react/destructuring-assignment": 0,
+    "react/button-has-type": 0,
+    "react/jsx-props-no-spreading": 1,
     "max-len": 1,
     "no-restricted-globals": 1,
-    "jsx-a11y/click-events-have-key-events": 1
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/control-has-associated-label": 0
   },
   "overrides": [
     {

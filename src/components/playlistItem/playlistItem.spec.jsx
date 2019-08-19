@@ -5,7 +5,7 @@ import PlaylistItem from './playlistItem';
 import { classes } from '../../util/constants';
 import componentSetup from '../../util/specHelpers/componentSetup.spec';
 
-const setup = props => componentSetup(PlaylistItem, {
+const setup = (props) => componentSetup(PlaylistItem, {
   children: <div />,
   className: classes.CURRENT,
   ...props,

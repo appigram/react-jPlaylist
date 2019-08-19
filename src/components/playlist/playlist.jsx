@@ -12,8 +12,7 @@ const Playlist = ({ playlist, children, className }) => (
       <PlaylistItem key={media.id} index={index}>
         {children}
       </PlaylistItem>
-    ))
-    }
+    ))}
   </ul>
 );
 
@@ -37,7 +36,7 @@ Playlist.propTypes = {
 
 export default compose(
   branch(
-    props => props.playlist.length > 0,
+    (props) => props.playlist.length > 0,
     renderComponent(Playlist),
   ),
 )(renderNothing(null));

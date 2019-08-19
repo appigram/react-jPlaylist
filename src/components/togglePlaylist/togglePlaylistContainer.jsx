@@ -9,7 +9,7 @@ const mapStateToProps = ({ jPlaylists }, { id }) => ({
 });
 
 const handlers = {
-  togglePlaylist: props => () => props.setOption(props.id, 'hidePlaylist', !props.hidePlaylist),
+  togglePlaylist: (props) => () => props.setOption(props.id, 'hidePlaylist', !props.hidePlaylist),
 };
 
 export default compose(

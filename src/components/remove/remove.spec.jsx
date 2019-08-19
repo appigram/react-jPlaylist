@@ -4,7 +4,7 @@ import Remove from './remove';
 import { classes } from '../../util/constants';
 import componentSetup from '../../util/specHelpers/componentSetup.spec';
 
-const setup = props => componentSetup(Remove, {
+const setup = (props) => componentSetup(Remove, {
   remove: expect.createSpy(),
   ...props,
 });

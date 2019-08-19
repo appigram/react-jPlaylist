@@ -5,7 +5,7 @@ import MediaLink from './mediaLink';
 import { classes } from '../../util/constants';
 import componentSetup from '../../util/specHelpers/componentSetup.spec';
 
-const setup = props => componentSetup(MediaLink, {
+const setup = (props) => componentSetup(MediaLink, {
   children: <div />,
   play: expect.createSpy(),
   ...props,

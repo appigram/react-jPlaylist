@@ -4,7 +4,7 @@ import TogglePlaylist from './togglePlaylist';
 import { classes } from '../../util/constants';
 import componentSetup from '../../util/specHelpers/componentSetup.spec';
 
-const setup = props => componentSetup(TogglePlaylist, {
+const setup = (props) => componentSetup(TogglePlaylist, {
   children: 'togglePlaylist',
   togglePlaylist: expect.createSpy(),
   ...props,

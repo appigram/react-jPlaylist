@@ -5,7 +5,7 @@ import Next from './next';
 import { classes } from '../../util/constants';
 import componentSetup from '../../util/specHelpers/componentSetup.spec';
 
-const setup = props => componentSetup(Next, {
+const setup = (props) => componentSetup(Next, {
   children: <div />,
   next: expect.createSpy(),
   ...props,

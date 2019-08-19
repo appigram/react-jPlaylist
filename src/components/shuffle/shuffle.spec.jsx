@@ -4,7 +4,7 @@ import Shuffle from './shuffle';
 import { classes } from '../../util/constants';
 import componentSetup from '../../util/specHelpers/componentSetup.spec';
 
-const setup = props => componentSetup(Shuffle, {
+const setup = (props) => componentSetup(Shuffle, {
   children: 'shuffle',
   shuffle: expect.createSpy(),
   ...props,

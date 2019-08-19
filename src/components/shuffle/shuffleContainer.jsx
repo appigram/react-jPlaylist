@@ -5,7 +5,7 @@ import { shuffle } from '../../actions/actions';
 import Shuffle from './shuffle';
 
 const handlers = {
-  shuffle: props => () => props.shuffle(props.id, undefined, true),
+  shuffle: (props) => () => props.shuffle(props.id, undefined, true),
 };
 
 export default compose(

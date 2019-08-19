@@ -142,7 +142,7 @@ const updateJPlaylist = (state, action, fn) => {
 };
 
 const reducer = (state = initialState, action) => {
-  const updateValue = fn => updateJPlaylist(state, action, fn);
+  const updateValue = (fn) => updateJPlaylist(state, action, fn);
 
   switch (action.type) {
     case actionNames.SET_OPTION:

@@ -5,7 +5,7 @@ import { next } from '../../actions/actions';
 import Next from './next';
 
 const handlers = {
-  next: props => () => props.next(props.id),
+  next: (props) => () => props.next(props.id),
 };
 
 export default compose(
